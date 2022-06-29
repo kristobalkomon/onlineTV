@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online TV</title>
+    <style>
+       /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+/*# sourceMappingURL=normalize.min.css.map */@import url("https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Mulish:wght@400;700;800&display=swap");
+html {
+  font-size: 10px;
+  font-family: 'Marcellus SC', serif;
+}
+
+body {
+  background-color: black;
+  color: #fdfdfd;
+  font-size: 16px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav-item {
+  margin: 0 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-link::after {
+  content: "";
+  opacity: 0;
+  display: block;
+  width: 100%;
+  height: .2rem;
+  margin-top: 5px;
+  border-radius: 5rem;
+  background: #103b2c;
+  background: linear-gradient(160deg, #326cff 0%, #26fff2 100%);
+}
+
+.nav-link.active {
+  color: white;
+}
+
+.nav-link.active::after {
+  opacity: 1;
+}
+
+.control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.control-item {
+  margin-left: 7.5rem;
+}
+
+.control-btn {
+  display: block;
+  background-size: cover;
+}
+
+.control-btn__search {
+  background-image: url(img/searchicon.png);
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  border: none;
+}
+
+.control-btn__bell {
+  background-image: url(img/bellicon.png);
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  border: none;
+}
+
+.control-btn__user {
+  background-image: url(img/usericon.png);
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  border: none;
+}
+
+.section-banner {
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
+.banner {
+  width: 65rem;
+}
+
+.banner__title {
+  font-family: 'Mulish SC', sans-serif;
+  font-weight: 300;
+  font-size: 60px;
+}
+
+.banner-info {
+  font-weight: 800;
+}
+
+.banner-info__year {
+  margin-right: 4rem;
+}
+
+.banner-info__age {
+  margin-right: 4rem;
+  padding: 2px 10px;
+  background: linear-gradient(black, black) padding-box, linear-gradient(160deg, #326cff, #26fff2) border-box;
+  border-radius: 5em;
+  border: 2px solid transparent;
+}
+
+.banner-info__time {
+  margin-right: 6rem;
+}
+
+.banner-info__raiting {
+  position: relative;
+}
+
+.banner-info__raiting::after {
+  content: "";
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url(img/star.png);
+  position: absolute;
+  margin-left: 1rem;
+  top: 1px;
+}
+
+.banner__description {
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.8rem;
+  margin: 4rem 0;
+  padding-right: 3rem;
+  text-align: justify;
+}
+
+.banner-buttons {
+  margin-bottom: 5rem;
+}
+
+.banner-buttons__watch {
+  background: #103b2c;
+  background: linear-gradient(160deg, #326cff 0%, #26fff2 100%);
+  border-radius: 5em;
+  padding: 1.5rem 3rem;
+  font-family: 'Mulish SC', sans-serif;
+  font-weight: 800;
+  color: #fff;
+  -webkit-box-shadow: 0px 5px 50px rgba(50, 108, 255, 0.5);
+          box-shadow: 0px 5px 50px rgba(50, 108, 255, 0.5);
+}
+
+.banner-buttons__info {
+  background: #fff;
+  border-radius: 5em;
+  padding: 1.5rem 3rem;
+  font-family: 'Mulish SC', sans-serif;
+  font-weight: 800;
+  margin-left: 2rem;
+}
+
+.container-posters {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section__h2 {
+  margin-top: 5rem;
+  display: inline-block;
+  position: relative;
+}
+
+.section__h2_link {
+  font-weight: 700;
+  font-size: 2.8rem;
+  position: relative;
+  padding-left: 2rem;
+  text-decoration: none;
+  color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 3rem;
+}
+
+.section__h2_link::before {
+  content: "";
+  display: block;
+  width: .8rem;
+  height: 3.5rem;
+  border-radius: .5rem;
+  background: #103b2c;
+  background: linear-gradient(160deg, #326cff 0%, #26fff2 100%);
+  position: absolute;
+  margin-bottom: 0.5rem;
+  top: -2px;
+}
+
+.movies {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.movies-item {
+  width: 15%;
+}
+
+.movies__img {
+  width: 100%;
+  height: 320px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: .2s ease-out box-shadow;
+  transition: .2s ease-out box-shadow;
+}
+
+.movies__img:hover {
+  -webkit-box-shadow: 0px 0px 30px rgba(44, 176, 249, 0.5);
+          box-shadow: 0px 0px 30px rgba(44, 176, 249, 0.5);
+}
+
+.section__btn {
+  margin-top: 5.5rem;
+  background: #103b2c;
+  background: linear-gradient(160deg, #326cff 0%, #26fff2 100%);
+  border-radius: 5em;
+  padding: 1.5rem 3rem;
+  font-family: 'Mulish SC', sans-serif;
+  font-weight: 800;
+  color: #fff;
+  -webkit-box-shadow: 0px 5px 50px rgba(50, 108, 255, 0.5);
+          box-shadow: 0px 5px 50px rgba(50, 108, 255, 0.5);
+}
+
+.genres {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.genres__title {
+  font-size: 24px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  margin: 0 0 4rem 0;
+}
+
+.genres-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 23.6%;
+          flex: 0 0 23.6%;
+  border-radius: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 2.6rem;
+}
+
+.genres-item_romance {
+  background: linear-gradient(10deg, #eb6060 0%, #ffc2c2 35%);
+}
+
+.genres-item_drama {
+  background: linear-gradient(10deg, #147e40 0%, #2ecc71 35%);
+}
+
+.genres-item_historical {
+  background: linear-gradient(10deg, #8a29b8 0%, #dd94ff 35%);
+}
+
+.genres-item_action {
+  background: linear-gradient(10deg, #152f8f 0%, #7693ff 35%);
+}
+
+.genres-item_sci-fi {
+  background: linear-gradient(10deg, #af6f1a 0%, #ffc372 35%);
+}
+
+.genres-item_horror {
+  background: linear-gradient(10deg, #861a12 0%, #ff574b 35%);
+}
+
+.genres-item_comedy {
+  background: linear-gradient(10deg, #077434 0%, #81dba7 35%);
+}
+
+.genres-item_documentary {
+  background: linear-gradient(10deg, #a82a8f 0%, #ffa8ee 35%);
+}
+
+.genres-item img {
+  margin-top: 4rem;
+}
+
+.actors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+}
+
+.actors__title {
+  font-size: 14px;
+  font-family: 'Mulish', sans-serif;
+}
+
+.actors-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 14%;
+          flex: 0 0 14%;
+}
+
+.actors-link img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 0;
+     object-position: 50% 0;
+  border-radius: 100%;
+}
+
+.section__h2_actors {
+  margin: 30px 0;
+}
+
+.marketing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 80px 0 130px 0;
+}
+
+.marketing-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.marketing-item img {
+  width: 100%;
+  height: 34rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.offer {
+  border-radius: 3rem;
+  max-width: 122.4rem;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: url(img/background3.jpg) no-repeat center bottom;
+}
+
+.offer__btn {
+  margin-right: 10rem;
+  border: none;
+  background: #103b2c;
+  background: linear-gradient(160deg, #326cff 0%, #26fff2 100%);
+  border-radius: 5em;
+  padding: 1.5rem 3rem;
+  font-family: 'Mulish SC', sans-serif;
+  font-weight: 800;
+  color: #fff;
+  -webkit-box-shadow: 0px 5px 50px rgba(50, 108, 255, 0.5);
+          box-shadow: 0px 5px 50px rgba(50, 108, 255, 0.5);
+}
+
+.offer__title {
+  padding: 5rem 0 5rem 5rem;
+  max-width: 79.2rem;
+  font-size: 6.4rem;
+  font-weight: 700;
+  text-shadow: 0 0 15px black;
+  font-family: 'Mulish', sans-serif;
+}
+
+footer {
+  background-color: #101012;
+  padding: 7rem 0 5rem 0;
+  margin-top: 13rem;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list__link {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+}
+
+.footer-list__item {
+  margin-bottom: 2rem;
+}
+
+.span-tv {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Mulish', sans-serif;
+  color: #fff;
+  padding: 0 18px;
+  background: linear-gradient(#101012, #101012) padding-box, linear-gradient(160deg, #326cff, #26fff2) border-box;
+  border-radius: 5rem;
+  border: 4px solid transparent;
+}
+
+.span-box {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Mulish', sans-serif;
+  color: #fff;
+  padding-left: 4px;
+}
+
+a {
+  text-decoration: none;
+}
+/*# sourceMappingURL=styles.css.map */
+    </style>
+  </head>
+  <body></body>
+  <header class="header"><a href="#"> <span class="span-tv">TV</span><span class="span-box">box</span></a>
+    <nav> 
+      <ul class="nav">
+        <li class="nav-item"> <a class="nav-link active" href="">Home </a></li>
+        <li class="nav-item"> <a class="nav-link" href="">TV Shows </a></li>
+        <li class="nav-item"> <a class="nav-link" href="">Movies </a></li>
+        <li class="nav-item"> <a class="nav-link" href="">Series </a></li>
+      </ul>
+    </nav>
+    <ul class="control"> 
+      <li class="control-item"> 
+        <button class="control-btn__search"></button>
+      </li>
+      <li class="control-item"> 
+        <button class="control-btn__bell"></button>
+      </li>
+      <li class="control-item"> 
+        <button class="control-btn__user"></button>
+      </li>
+    </ul>
+  </header>
+  <section class="section-banner">
+    <div class="container">
+      <div class="banner">
+        <h1 class="banner__title">Zack Snyder's Justice League</h1>
+        <div class="banner-info"><span class="banner-info__year">2021</span><span class="banner-info__age">18+</span><span class="banner-info__time">4h 2m</span><span class="banner-info__raiting">8.8</span></div>
+        <p class="banner__description">Fueled by his restored faith in humanity and inspired by Superman’s selfless act, Bruce Wayne enlists the help of his newfound ally, Diana Prince, to face an even greater enemy. Together, Batman and Wonder Woman work quickly to find and recruit a team of metahumans to stand against this newly awakened threat.  But despite the formation of this unprecedented league of heroes—Batman, Wonder Woman, Aquaman, Cyborg and The Flash—it may already be too late to save the planet from an assault of catastrophic proportions.</p>
+        <div class="banner-buttons">
+          <button class="banner-buttons__watch">Watch</button>
+          <button class="banner-buttons__info">More information</button>
+        </div>
+      </div><img src="img/justice2.jpg" alt="banner">
+    </div>
+  </section>
+  <section class="section">
+    <div class="container-posters">
+      <h2 class="section__h2"> <a class="section__h2_link" href="#">Trending TV shows</a></h2>
+      <div class="movies"> 
+        <div class="movies-item"><a class="movies__link" href=""><img class="movies__img" src="img/posters/01.jpg" alt=""></a></div>
+        <div class="movies-item"><a class="movies__link" href=""><img class="movies__img" src="img/posters/02.jpg" alt=""></a></div>
+        <div class="movies-item"><a class="movies__link" href=""><img class="movies__img" src="img/posters/03.jpg" alt=""></a></div>
+        <div class="movies-item"><a class="movies__link" href=""><img class="movies__img" src="img/posters/04.jpg" alt=""></a></div>
+        <div class="movies-item"><a class="movies__link" href=""><img class="movies__img" src="img/posters/05.jpg" alt=""></a></div>
+        <div class="movies-item"><a class="movies__link" href=""><img class="movies__img" src="img/posters/06.jpg" alt=""></a></div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container-posters">
+      <h2 class="section__h2"> <a class="section__h2_link" href="#">Trending movies</a></h2>
+      <div class="movies"> 
+        <div class="movies-item"><a class="movies__link" href=""><img class="movies__img" src="img/posters/07.jpg" alt=""></a></div>
+        <div class="movies-item"><a class="movies__link" href=""><img class="movies__img" src="img/posters/08.jpg" alt=""></a></div>
+        <div class="movies-item"><a class="movies__link" href=""><img class="movies__img" src="img/posters/09.jpg" alt=""></a></div>
+        <div class="movies-item"><a class="movies__link" href=""><img class="movies__img" src="img/posters/10.jpg" alt=""></a></div>
+        <div class="movies-item"><a class="movies__link" href=""><img class="movies__img" src="img/posters/11.jpg" alt=""></a></div>
+        <div class="movies-item"><a class="movies__link" href=""><img class="movies__img" src="img/posters/12.jpg" alt=""></a></div>
+      </div>
+      <button class="section__btn">See more</button>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container-posters">
+      <h2 class="section__h2"> <a class="section__h2_link" href="#">Popular genres </a></h2>
+      <div class="genres">
+        <div class="genres-item genres-item_romance"><img src="../src/img/genres/romance.png" alt="Romance">
+          <h3 class="genres__title">Romance</h3>
+        </div>
+        <div class="genres-item genres-item_drama"><img src="../src/img/genres/drama.png" alt="Drama">
+          <h3 class="genres__title">Drama</h3>
+        </div>
+        <div class="genres-item genres-item_historical"><img src="../src/img/genres/historical.png" alt="Historical">
+          <h3 class="genres__title">Historical</h3>
+        </div>
+        <div class="genres-item genres-item_action"><img src="../src/img/genres/action.png" alt="Action">
+          <h3 class="genres__title">Action</h3>
+        </div>
+        <div class="genres-item genres-item_sci-fi"><img src="../src/img/genres/sci-fi.png" alt="Sci-Fi">
+          <h3 class="genres__title">Sci-Fi</h3>
+        </div>
+        <div class="genres-item genres-item_horror"><img src="../src/img/genres/horror.png" alt="Horror">
+          <h3 class="genres__title">Horror</h3>
+        </div>
+        <div class="genres-item genres-item_comedy"><img src="../src/img/genres/comedy.png" alt="Comedy">
+          <h3 class="genres__title">Comedy</h3>
+        </div>
+        <div class="genres-item genres-item_documentary"><img src="../src/img/genres/documentary.png" alt="Documentary">
+          <h3 class="genres__title">Documentary</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container-posters">
+      <h2 class="section__h2 section__h2_actors"><a class="section__h2_link" href="#">Popular actors </a></h2>
+      <div class="actors">
+        <div class="actors-item"><a class="actors-link" href="#"> <img src="../src/img/actors/Charly-Hanem.jpg" alt="Charles Hunnam"></a>
+          <h3 class="actors__title">Charles Hunnam</h3>
+        </div>
+        <div class="actors-item"><a class="actors-link" href="#"> <img src="../src/img/actors/Samuel L. Jackson.jpg" alt="Samuel L. Jackson"></a>
+          <h3 class="actors__title">Samuel L. Jackson</h3>
+        </div>
+        <div class="actors-item"><a class="actors-link" href="#"> <img src="../src/img/actors/benedict-cumberbatch.jpg" alt="Benedict Cumberbatch"></a>
+          <h3 class="actors__title">Benedict Cumberbatch</h3>
+        </div>
+        <div class="actors-item"><a class="actors-link" href="#"> <img src="../src/img/actors/Seth-Rogen.jpg" alt="Seth Rogen"></a>
+          <h3 class="actors__title">Seth Rogen</h3>
+        </div>
+        <div class="actors-item"><a class="actors-link" href="#"> <img src="../src/img/actors/slay.jpg" alt="Sylvester Stallone"></a>
+          <h3 class="actors__title">Sylvester Stallone</h3>
+        </div>
+        <div class="actors-item"><a class="actors-link" href="#"> <img src="../src/img/actors/Jake Gyllenhaal.jpg" alt="Jake Gyllenhaal"></a>
+          <h3 class="actors__title">Jake Gyllenhaal</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container-posters">
+      <div class="marketing">
+        <div class="marketing-item"><a href="#"><img src="../src/img/Best-Christmas-Movies.jpg" alt="Best-Christmas-Movies"></a></div>
+        <div class="marketing-item"><a href="#"><img src="../src/img/CLFMovieThon.jpg" alt="CLFMovieThon"></a></div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container-posters">
+      <div class="offer">
+        <div class="offer__title">Are You New Here? Don't&nbsp;Wait, Register Now!</div>
+        <button class="offer__btn">Register Now</button>
+      </div>
+    </div>
+  </section>
+  <footer> 
+    <div class="footer">
+      <div class="footer-item"> <a href="#"><span class="span-tv">TV</span><span class="span-box">box</span></a></div>
+      <div class="footer-item">
+        <ul class="footer-list"> 
+          <li class="footer-list__item"> <a class="footer-list__link" href="#">Voice over and Subtitle</a></li>
+          <li class="footer-list__item"> <a class="footer-list__link" href="#">Media Center</a></li>
+          <li class="footer-list__item"> <a class="footer-list__link" href="#">Privacy</a></li>
+          <li class="footer-list__item"> <a class="footer-list__link" href="#">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <ul class="footer-list"> 
+          <li class="footer-list__item"> <a class="footer-list__link" href="#">Voice Description</a></li>
+          <li class="footer-list__item"> <a class="footer-list__link" href="#">Investor Relations</a></li>
+          <li class="footer-list__item"> <a class="footer-list__link" href="#">Legal Provisions</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <ul class="footer-list"> 
+          <li class="footer-list__item"><a class="footer-list__link" href="#">Help Center</a></li>
+          <li class="footer-list__item"> <a class="footer-list__link" href="#">Job Opportunities</a></li>
+          <li class="footer-list__item"> <a class="footer-list__link" href="#">Coocies Preferences</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <ul class="footer-list"> 
+          <li class="footer-list__item"> <a class="footer-list__link" href="#">Gift Cards</a></li>
+          <li class="footer-list__item"> <a class="footer-list__link" href="#">Terms of Use</a></li>
+          <li class="footer-list__item"> <a class="footer-list__link" href="#">Corporate Informatios</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</html>

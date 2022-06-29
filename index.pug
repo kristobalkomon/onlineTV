@@ -1,0 +1,157 @@
+- var pageTitle = 'Online TV'
+
+doctype html
+html(lang="en")
+  head
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title= pageTitle
+    style 
+      include scss/normilize.css
+      include scss/styles.css
+  body
+  include modules/header
+
+
+  section.section-banner
+   .container
+      .banner
+         h1.banner__title Zack Snyder's Justice League
+         .banner-info
+            span.banner-info__year 2021
+            span.banner-info__age 18+
+            span.banner-info__time 4h 2m
+            span.banner-info__raiting 8.8
+         p.banner__description Fueled by his restored faith in humanity and inspired by Superman’s selfless act, Bruce Wayne enlists the help of his newfound ally, Diana Prince, to face an even greater enemy. Together, Batman and Wonder Woman work quickly to find and recruit a team of metahumans to stand against this newly awakened threat.  But despite the formation of this unprecedented league of heroes—Batman, Wonder Woman, Aquaman, Cyborg and The Flash—it may already be too late to save the planet from an assault of catastrophic proportions.
+         .banner-buttons
+            button.banner-buttons__watch Watch
+            button.banner-buttons__info More information
+      img(src="img/justice2.jpg", alt="banner")
+
+  section.section
+   .container-posters
+      h2.section__h2 
+         a(href="#").section__h2_link Trending TV shows
+      .movies 
+         .movies-item
+            a(href="").movies__link
+               img(src="img/posters/01.jpg", alt="").movies__img
+         .movies-item
+            a(href="").movies__link
+               img(src="img/posters/02.jpg", alt="").movies__img
+         .movies-item
+            a(href="").movies__link
+               img(src="img/posters/03.jpg", alt="").movies__img
+         .movies-item
+            a(href="").movies__link
+               img(src="img/posters/04.jpg", alt="").movies__img
+         .movies-item
+            a(href="").movies__link
+               img(src="img/posters/05.jpg", alt="").movies__img
+         .movies-item
+            a(href="").movies__link
+               img(src="img/posters/06.jpg", alt="").movies__img
+
+  section.section
+   .container-posters
+      h2.section__h2 
+         a(href="#").section__h2_link Trending movies
+      .movies 
+         .movies-item
+            a(href="").movies__link
+               img(src="img/posters/07.jpg", alt="").movies__img
+         .movies-item
+            a(href="").movies__link
+               img(src="img/posters/08.jpg", alt="").movies__img
+         .movies-item
+            a(href="").movies__link
+               img(src="img/posters/09.jpg", alt="").movies__img
+         .movies-item
+            a(href="").movies__link
+               img(src="img/posters/10.jpg", alt="").movies__img
+         .movies-item
+            a(href="").movies__link
+               img(src="img/posters/11.jpg", alt="").movies__img
+         .movies-item
+            a(href="").movies__link
+               img(src="img/posters/12.jpg", alt="").movies__img
+      button.section__btn See more
+
+  section.section
+   .container-posters
+      h2.section__h2 
+         a(href="#").section__h2_link Popular genres 
+      .genres
+         .genres-item.genres-item_romance
+            img(src="../src/img/genres/romance.png", alt="Romance")
+            h3.genres__title Romance
+         .genres-item.genres-item_drama
+            img(src="../src/img/genres/drama.png", alt="Drama")
+            h3.genres__title Drama
+         .genres-item.genres-item_historical
+            img(src="../src/img/genres/historical.png", alt="Historical")
+            h3.genres__title Historical
+         .genres-item.genres-item_action
+            img(src="../src/img/genres/action.png", alt="Action")
+            h3.genres__title Action
+         .genres-item.genres-item_sci-fi
+            img(src="../src/img/genres/sci-fi.png", alt="Sci-Fi")
+            h3.genres__title Sci-Fi
+         .genres-item.genres-item_horror
+            img(src="../src/img/genres/horror.png", alt="Horror")
+            h3.genres__title Horror
+         .genres-item.genres-item_comedy
+            img(src="../src/img/genres/comedy.png", alt="Comedy")
+            h3.genres__title Comedy
+         .genres-item.genres-item_documentary
+            img(src="../src/img/genres/documentary.png", alt="Documentary")
+            h3.genres__title Documentary
+
+  section.section
+   .container-posters
+      h2.section__h2.section__h2_actors
+         a(href="#").section__h2_link Popular actors 
+      .actors
+         .actors-item
+            a(href="#").actors-link 
+               img(src="../src/img/actors/Charly-Hanem.jpg", alt="Charles Hunnam")
+            h3.actors__title Charles Hunnam
+         .actors-item
+            a(href="#").actors-link 
+               img(src="../src/img/actors/Samuel L. Jackson.jpg", alt="Samuel L. Jackson")
+            h3.actors__title Samuel L. Jackson
+         .actors-item
+            a(href="#").actors-link 
+               img(src="../src/img/actors/benedict-cumberbatch.jpg", alt="Benedict Cumberbatch")
+            h3.actors__title Benedict Cumberbatch
+         .actors-item
+            a(href="#").actors-link 
+               img(src="../src/img/actors/Seth-Rogen.jpg", alt="Seth Rogen")
+            h3.actors__title Seth Rogen
+         .actors-item
+            a(href="#").actors-link 
+               img(src="../src/img/actors/slay.jpg", alt="Sylvester Stallone")
+            h3.actors__title Sylvester Stallone
+         .actors-item
+            a(href="#").actors-link 
+               img(src="../src/img/actors/Jake Gyllenhaal.jpg", alt="Jake Gyllenhaal")
+            h3.actors__title Jake Gyllenhaal
+
+  section.section
+   .container-posters
+      .marketing
+         .marketing-item
+            a(href="#")
+               img(src="../src/img/Best-Christmas-Movies.jpg", alt="Best-Christmas-Movies")
+         .marketing-item
+            a(href="#")
+               img(src="../src/img/CLFMovieThon.jpg", alt="CLFMovieThon")
+
+  section.section
+   .container-posters
+      .offer
+         .offer__title Are You New Here? Don't&nbsp;Wait, Register Now!
+         button.offer__btn Register Now
+
+
+
+  include modules/footer

@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Mulish:wght@400;700;800&display=swap');
+
+$white: #fff; 
+$gradient-safe: rgb(16,59,44);
+$gradient: linear-gradient(160deg, #326cff 0%, #26fff2 100%);
+
+html {
+   font-size: 10px;
+   font-family: 'Marcellus SC', serif;
+   // font-family: 'Mulish', sans-serif;
+}
+body {
+   background-color: rgb(0, 0, 0);
+   color:rgb(253, 253, 253);
+   font-size: 16px;
+}
+.header {
+   display: flex;
+   justify-content: space-between;
+   max-width: 144rem;
+   margin: 0 auto;
+   padding: 1.5rem 1.5rem 3rem;
+   align-items: center;
+}
+.nav {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   list-style: none;
+   padding-left: 0;
+
+   &-item {
+      margin: 0 1.5rem;
+   }
+
+   &-link {
+      &::after {
+         content: "";
+         opacity: 0;
+         display: block;
+         width: 100%;
+         height: .2rem;
+         margin-top: 5px;
+         border-radius: 5rem;
+         background: $gradient-safe;
+         background: $gradient;
+      }
+      text-decoration: none;
+      font-weight: 700;
+      color: rgba($white, 0.5);
+      &.active {
+         color: rgba($white, 1);
+         &::after {
+            opacity: 1;
+         }
+      }
+   }
+}
+.control {
+   display: flex;
+   align-items: center;
+   list-style-type: none;
+   padding-left: 0;
+
+   &-item {
+      margin-left: 7.5rem;
+   }
+
+   &-btn {
+      display: block;
+      background-size: cover;
+      &__search {
+         background-image: url(img/searchicon.png);
+         width: 2.4rem;
+         height: 2.4rem;
+         padding: 0;
+         border: none;
+      }
+      &__bell {
+         background-image: url(img/bellicon.png);
+         width: 2.4rem;
+         height: 2.4rem;
+         padding: 0;
+         border: none;
+      }
+      &__user {
+         background-image: url(img/usericon.png);
+         width: 2.4rem;
+         height: 2.4rem;
+         padding: 0;
+         border: none;
+      }
+   }
+}
+.section-banner {
+   border-bottom: .1rem solid rgba($white, 0.5);
+}
+.container{
+   max-width: 144rem;
+   margin: 0 auto;
+   padding: 0 1.5rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   & img {
+      width: 100%;
+      height: auto;
+      z-index: -1;
+   }
+}
+.banner {
+   width: 65rem;
+   //box-shadow: 7rem -1rem 6rem black;
+   &__title {
+      font-family: 'Mulish SC', sans-serif;
+      font-weight: 300;
+      font-size: 60px;
+   }
+   &-info {
+      font-weight: 800;
+      &__year {
+         margin-right: 4rem;
+      }
+      &__age {
+         margin-right: 4rem;
+         padding: 2px 10px;
+         background: 
+         linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)) padding-box,
+         linear-gradient(160deg, #326cff, #26fff2) border-box;
+         border-radius: 5em;
+         border: 2px solid transparent;
+      }
+      &__time {
+         margin-right: 6rem;
+      }
+      &__raiting {
+         position: relative;
+         &::after {
+            content: "";
+            display: inline-block;
+            width: 1.6rem;
+            height: 1.6rem;
+            background-image: url(img/star.png);
+            position: absolute;
+            margin-left: 1rem;
+            top: 1px;
+         }
+      }
+   }
+   &__description {
+      line-height: 1.5;
+      color: rgba($white, 0.5);
+      font-size: 1.8rem;
+      margin: 4rem 0;
+      padding-right: 3rem;
+      text-align: justify;
+   }
+   &-buttons {
+      margin-bottom: 5rem;
+      &__watch {
+         background: $gradient-safe;
+         background: $gradient;
+         border-radius: 5em;
+         padding: 1.5rem 3rem;
+         font-family: 'Mulish SC', sans-serif;
+         font-weight: 800;
+         color: $white;
+         box-shadow: 0px 5px 50px rgba(50, 108, 255, 0.5);
+      }
+      &__info {
+         background: $white;
+         border-radius: 5em;
+         padding: 1.5rem 3rem;
+         font-family: 'Mulish SC', sans-serif;
+         font-weight: 800;
+         margin-left: 2rem;
+         
+      }
+   }
+}
+
+.container-posters {
+   max-width: 144rem;
+   margin: 0 auto;
+   padding: 0 1.5rem;
+}
+.section__h2 {
+   margin-top: 5rem;
+   display: inline-block;
+   position: relative;
+
+   &_link {
+      font-weight: 700;
+      font-size: 2.8rem;
+      position: relative;
+      padding-left: 2rem;
+      text-decoration: none;
+      color: $white;
+      align-items: center;
+      padding-right: 3rem;
+   
+      &::before {
+         content: "";
+         display: block;
+         width: .8rem;
+         height: 3.5rem;
+         border-radius: .5rem;
+         background: $gradient-safe;
+         background: $gradient;
+         position: absolute;
+         margin-bottom: 0.5rem;
+         top: -2px;
+      }
+   }
+}
+
+.movies {
+   margin-top: 2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   &-item {
+      width: 15%;
+   }
+   &__img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      transition: .2s ease-out box-shadow;
+      &:hover {
+         box-shadow: 0px 0px 30px rgba(44, 176, 249, 0.5);
+      }
+   }
+}
+
+.section__btn {
+   margin-top: 5.5rem;
+   background: $gradient-safe;
+   background: $gradient;
+   border-radius: 5em;
+   padding: 1.5rem 3rem;
+   font-family: 'Mulish SC', sans-serif;
+   font-weight: 800;
+   color: $white;
+   box-shadow: 0px 5px 50px rgba(50, 108, 255, 0.5);
+}
+
+.genres {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   text-align: center;
+   margin-top: 2rem;
+   &__title {
+      font-size: 24px;
+      font-family: 'Mulish', sans-serif;
+      font-weight: 700;
+      margin: 0 0 4rem 0;
+   }
+   &-item {
+      flex: 0 0 23.6%;
+      border-radius: 2rem;
+      box-sizing: border-box;
+      margin-bottom: 2.6rem;
+
+      &_romance {background: linear-gradient(10deg, #eb6060 0%, #ffc2c2 35%);}
+      &_drama {background: linear-gradient(10deg, #147e40 0%,#2ecc71 35%);}
+      &_historical {background: linear-gradient(10deg, #8a29b8 0%,#dd94ff 35%);}
+      &_action {background: linear-gradient(10deg, #152f8f 0%,#7693ff 35%);}
+      &_sci-fi {background: linear-gradient(10deg, #af6f1a 0%,#ffc372 35%);}
+      &_horror {background: linear-gradient(10deg,#861a12 0%,#ff574b 35%);}
+      &_comedy {background: linear-gradient(10deg,#077434 0%,#81dba7 35%);}
+      &_documentary {background: linear-gradient(10deg,#a82a8f 0%,#ffa8ee 35%);}
+      & img {
+         margin-top: 4rem;
+      }
+   }
+}
+
+.actors {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   text-align: center;
+   &__title {
+      font-size: 14px;
+      font-family: 'Mulish', sans-serif;
+   }
+   &-item {
+      flex: 0 0 14%;
+   }
+   &-link img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: 50% 0;
+      border-radius: 100%;
+   }
+}
+.section__h2_actors {
+   margin: 30px 0;
+}
+
+.marketing {
+   display: flex;
+   align-items: center;
+   margin: 80px 0 130px 0;
+   &-item {
+      flex: 0 0 50%;
+   }
+   &-item img {
+      width: 100%;
+      height: 34rem;
+      object-fit: cover;
+   }
+}
+
+.offer {
+   border-radius: 3rem;
+   max-width: 122.4rem;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: url(img/background3.jpg) no-repeat center bottom;
+   &__btn {
+      margin-right: 10rem;
+      border: none;
+      background: $gradient-safe;
+      background: $gradient;
+      border-radius: 5em;
+      padding: 1.5rem 3rem;
+      font-family: 'Mulish SC', sans-serif;
+      font-weight: 800;
+      color: $white;
+      box-shadow: 0px 5px 50px rgba(50, 108, 255, 0.5);
+   }
+   &__title {
+      padding: 5rem 0 5rem 5rem;
+      max-width: 79.2rem;
+      font-size: 6.4rem;
+      font-weight: 700;
+      text-shadow: 0 0 15px black;
+      font-family: 'Mulish', sans-serif;
+   }
+}
+
+footer {
+   background-color: #101012;
+   padding: 7rem 0 5rem 0;
+   margin-top: 13rem;
+}
+.footer {
+   display: flex;
+   justify-content: space-between;
+   max-width: 144rem;
+   margin: 0 auto;
+   padding: 1.5rem;
+   &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      &__link {
+         font-size: 1.8rem;
+         color: rgba($white, 0.5);
+         font-family: 'Mulish', sans-serif;
+         font-weight: 600;
+      }
+      &__item {
+         margin-bottom: 2rem;
+      }
+   }
+}
+
+
+
+
+//LOGO
+.span-tv {
+   font-size: 40px;
+   font-weight: 700;
+   font-family: 'Mulish', sans-serif;
+   color: $white;
+   padding: 0 18px;
+   background: 
+      linear-gradient(#101012, #101012) padding-box,
+      linear-gradient(160deg, #326cff, #26fff2) border-box;
+   border-radius: 5rem;
+   border: 4px solid transparent;
+}
+.span-box {
+   font-size: 40px;
+   font-weight: 700;
+   font-family: 'Mulish', sans-serif;
+   color: $white;
+   padding-left: 4px;
+}
+a {
+   text-decoration: none;
+}
